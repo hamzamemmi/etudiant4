@@ -1,0 +1,73 @@
+/**
+* @file fct.c
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_image.h>
+#include "partage_d'ecran.h"
+/**
+* @brief To initialize joueur1 .
+* @param joueur joueur1
+* @return Nothing
+*/
+
+void init_joueur1(joueur *joueur1)
+    {
+           joueur1->p[0]=IMG_Load("hamza.png");
+
+           joueur1->posperso.x = 20;
+
+           joueur1->posperso.y = 400;
+
+    }
+
+
+
+/**
+* @brief To initialize joueur2 .
+* @param joueur joueur2
+* @return Nothing
+*/
+
+void init_joueur2(joueur *joueur2)
+
+   {
+           joueur2->p[1]=IMG_Load("hamza1.png");
+
+           joueur2->posperso.x = largeur/2 + 20;
+
+           joueur2->posperso.y = 400;
+  }
+
+
+/**
+* @brief To initialize background1 .
+* @param background b
+* @return Nothing
+*/
+
+
+void init_background1(background *b)
+   {
+           b->background=IMG_Load("background.jpg");
+           b->pb.x=0;
+           b->pb.y=0;
+           b->pb.w=largeur/2;
+           b->pb.h=hauteur;
+}
+/**
+* @brief To initialize background2 .
+* @param background b
+* @return Nothing
+*/
+
+void init_background2(background *b)
+   {
+        b->background=IMG_Load("background.jpg");
+        b->pb.x=largeur/2;
+
+        b->pb.y=0;
+        b->pb.w=largeur/2;
+        b->pb.h=hauteur;
+}
