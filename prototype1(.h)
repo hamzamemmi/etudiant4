@@ -1,0 +1,36 @@
+#ifndef BACKGROUND_H_INCLUDED
+#define BACKGROUND_H_INCLUDED
+#include <stdio.h>
+	#include <stdlib.h>
+	#include <SDL/SDL.h>
+	#include <SDL/SDL_image.h>
+	#include <SDL/SDL_mixer.h>
+	#include <SDL/SDL_ttf.h>
+	#include <time.h>
+	#include <unistd.h>
+#include"perso.h"
+/**
+* @struct Background
+* @brief struct for backround
+*/
+
+
+typedef struct 
+{
+SDL_Surface *image; /*!< Surface. */
+SDL_Surface *image2; /*!< Surface. */
+SDL_Surface *calque; /*!< Surface. */
+SDL_Surface *calque2; /*!< Surface. */
+Mix_Music *music;
+/*Mix_chunk *son;*/
+SDL_Rect positionback; /*!< Rectangle*/
+SDL_Rect positionback2; /*!< Rectangle*/
+SDL_Rect cam1; /*!< Rectangle*/
+SDL_Rect poscam1; /*!< Rectangle*/
+TTF_Font *texte;
+} background;
+void initialiser_background(background *back);
+void Affiche_back(background back,SDL_Surface *ecran);
+void scrolling1 (hero *hero,background *back,int d,int co);
+void scrolling2 (hero *hero,background *back,int d2,int co);
+#endif
